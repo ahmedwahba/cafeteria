@@ -1,0 +1,84 @@
+<?php // echo $this->headTitle("order")          ?>
+<?php // $this->headLink()->appendStylesheet('/css/main.css')         ?>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<?php $this->headScript()->appendFile('/cafee-helper/js/myorders.js'); ?>
+
+
+<br /><br /> 
+<div id='myorderss'> 
+
+    <p>start Date: <input type="text" id="startdatepicker"></p>
+    <p>end Date: <input type="text" id="enddatepicker"></p>
+    <input type="button" id="myorders" value="my orders"/>
+
+    <div id="checks">
+
+        <table border='2'  style="size: auto" style="border-color: cadetblue" id='opt'>
+            <th> Date </th><th> Price</th>
+            <?php for ($i = 0; $i < count($this->checks); $i++) { ?>
+                <tr>
+
+                    <td class='mydate' id='<?php echo $this->checks[$i]['u_id']; ?>' > 
+                        <?php // for ($j = 0; $j < count($this->latestorder[0]); $i++) { ?>
+
+                        <?php echo $this->checks[$i]['date']; ?>
+
+                    </td> 
+
+                     <td > 
+                        <?php // for ($j = 0; $j < count($this->latestorder[0]); $i++) { ?>
+
+                        <?php echo $this->checks[$i]['total_price']; ?>
+
+
+                    </td> 
+
+                </tr>
+
+
+
+
+
+            <?php } ?> 
+
+
+
+        </table> 
+    </div>
+    
+    
+    
+    <div id="myprods">
+
+        <table border='2'  style="size: auto" style="border-color: cadetblue" id='mydetails'>
+          
+
+
+            <?php for ($i = 0; $i < count($this->myprodorders); $i++) { ?>
+                <tr>
+
+                    <td  > 
+                        <?php // for ($j = 0; $j < count($this->latestorder[0]); $i++) { ?>
+
+                        <?php echo $this->myprodorders[$i]['prod_name']; ?>
+
+
+                    </td> 
+
+                     <td> 
+                        <?php // for ($j = 0; $j < count($this->latestorder[0]); $i++) { ?>
+
+                        <?php echo $this->myprodorders[$i]['amount']; ?>
+                      <img  src="<?php echo $this->baseUrl() . '/img/product/' . $this->myprodorders[$i]['picture']; ?>" alt="product"/>
+
+                    </td> 
+
+                </tr>
+
+            <?php } ?> 
+
+        </table> 
+    </div>
+</div>

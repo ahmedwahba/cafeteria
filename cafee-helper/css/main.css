@@ -1,0 +1,203 @@
+
+/* test layout */ 
+#test {
+	color: red;
+	background-color: black;
+	margin-left: 50px;
+}
+
+.latestname{
+
+display:block;
+}
+/* order view */
+    *{
+        margin: 0px;
+        padding: 0px;
+    }
+    
+    #view-content{
+        margin: auto 10px;
+    }
+    
+    #detail , #pickorder{
+        display: inline-block;
+        margin: auto 10px ;
+        margin-top: 10px;
+        padding-left: 10px;
+        height: 90%;
+    }
+    
+    #pickorder{
+        width: 55%;
+    }
+    #detail{
+        width: 30%;
+        border: 5px black solid;
+        border-radius: 5px;
+        padding-left: 15px;
+        padding-top: 10px;
+    }
+    #selectuser{
+       
+        padding-left: 15px;
+        margin-top: 10px;
+        margin-left: 25px; 
+    }
+    
+    #products{
+        margin-top: 25px;
+        border-top: 7px black solid;
+        padding-top: 25px;
+    }
+    
+    #selecteditems{
+        margin: auto 10px;
+        padding-bottom: 15px;
+    }
+    #totalprice{
+        margin-top: 15px;
+        padding-top: 20px;
+        margin-bottom: 10px;
+        margin-right: 15px;
+        float: right;
+        border-radius: 5px;
+        border-top: 7px black solid;
+        width: 95%;
+        font-size: 24px;
+        font-weight: bold;
+        text-align: right;
+    }
+    
+    #addorder{
+         margin-top: 15px;
+         margin-bottom: 15px;
+         margin-right: 20px;
+         padding: 5px;
+         float: right;
+         box-shadow: 5px 5px   black; 
+        
+    }
+    
+    .productinfo{
+        display: inline-block;
+        position: relative;
+        margin: auto 5px;
+    }
+    
+     .productinfo  p{
+        
+        margin-left: 30%;
+    }
+    /*this for currency  l.e.  */
+    .productinfo  span{
+        position: absolute;
+        top: 15%;
+        z-index: 3;
+        right: 28px;
+        font-weight: normal;
+    }
+    
+    .productinfo  .price{
+        position: absolute;
+        top: 15%;
+        z-index: 3;
+        /* +40px */ 
+        right: 68px;
+        font-weight: bold;
+    }
+
+    #notes{
+    	width: 95%;
+    	height: 80%;
+    }
+    
+    #selecteditems table{
+    	width: 100%;
+    	table-layout: fixed;
+    	padding: 5px;
+    	/*border: 2px black solid;*/
+    	text-align: center;
+    }
+
+    .item td p{
+    	display: inline;
+    }
+
+    .item td input{
+    	width: 50%;
+    	height: 100%;
+    	padding: 5px;
+    }
+
+    .item td button{
+    	display: block;
+    	width: 50%;
+  
+    }
+
+    .item td .remove{
+    	font-size: 20px;
+    }
+ 
+    .latestname {
+        margin-left: 30%;
+        
+    }
+    #homeorder{
+        width: 95%;
+        border-collapse: collapse;
+        border-width: 2px;
+        margin: 2px;   
+    }
+
+
+    #homeorder td{
+    
+        border: 2px black solid;
+        text-align: center;
+        border-width: 2px;
+        margin: 2px;   
+    }
+
+     #homeorder .title{
+    
+        background-color: gray;
+
+    }
+
+    .orderdata{
+    
+        height: 50px;
+        background-color: #D0D4CF;
+
+    }
+
+    .viewdetails{
+    
+        padding-top: 10px;
+        padding-bottom: 10px;
+        
+    }
+
+    .viewdetails p{
+        margin: 0px;
+        padding-top: 5px;
+    }
+
+    .ordercomments{
+        font-size: 20px;
+        font-weight: bold;
+        padding-left: 10px;
+        float: left;
+    }
+
+    .totaloforder{
+         font-size: 20px;
+        font-weight: bold;
+        padding-right: 10px;
+        float: right;
+    }
+
+
+

@@ -1,0 +1,154 @@
+<?php echo $this->doctype() ?>
+<html>
+    <head>
+        <link rel="stylesheet" href="<?php echo $this->baseUrl(); ?>/css/style.css" >
+
+        <?php //$this->headLink()->appendStylesheet('/cofee-helper/css/main.css')?>
+        <?php echo $this->headMeta() ?>
+        <?php echo $this->headTitle() ?>
+        <?php echo $this->headLink() ?>
+        <?php echo $this->headScript() ?>
+
+        <title>Cafe</title>
+        <meta charset="utf-8">
+        <link rel="shortcut icon" type="image/x-icon" href="css/images/favicon.ico">
+        <link rel="stylesheet" href="<?php echo $this->baseUrl(); ?>/css/style1.css" type="text/css" media="all">
+        <link rel="stylesheet" href="<?php echo $this->baseUrl(); ?>/css/flexslider.css" type="text/css" media="all">
+        <script src="<?php echo $this->baseUrl(); ?>/js/jquery-1.8.0.min.js"></script>
+        <!--[if lt IE 9]><script src="js/modernizr.custom.js"></script><![endif]-->
+        <script src="<?php echo $this->baseUrl(); ?>/js/jquery.flexslider-min.js"></script>
+        <script src="<?php echo $this->baseUrl(); ?>/js/functions.js"></script>
+    </head>
+    <body>
+
+
+        <?php
+        $auth = Zend_Auth::getInstance();
+      
+        ?>
+        
+
+
+        <div id="wrapper">
+            <!-- header -->
+            <div class="header">
+                <!-- shell -->
+                <div class="shell">
+                    <h1 id="logo"><a href="#">cafe</a></h1>
+
+                    <!-- header-right -->
+
+                    <div class="cl">&nbsp;</div>
+                    <!-- end of header -->
+                    <!-- navigation -->
+                    <nav id="navigation">
+                        <?php
+                        if ($auth->hasIdentity()) {
+                            $this->user_name = $auth->getIdentity()->name;
+
+                            if ($this->user_name == 'admin') {
+                                ?>
+                                <ul>
+                                    <li >  <a href="<?php echo $this->baseUrl(); ?>/Order/mychecks" >checks </a></li>
+                                     <li> <a href="<?php echo $this->baseUrl(); ?>/order/adminhome" >ADMIN PANEL</a></li>
+                                    <li> <a href="<?php echo $this->baseUrl(); ?>/product/add" >Add product </a></li>
+                                    <li> <a href="<?php echo $this->baseUrl(); ?>/Auth/signup" >add new user </a></li>
+                                    <li> <a href="<?php echo $this->baseUrl(); ?>/order/addadminorder" >ADD ORDER </a></li>
+                                                                    <li><a href="<?php echo $this->baseUrl(); ?>/Auth/logout" >Logout</a></li>
+
+                                </ul>
+                            <?php
+                            } else {
+                                ?>
+                                <ul>
+                                    <li>   <?php echo "Hello " . $this->myname;
+                                ?> </li>
+                                    <li> <img src = "<?php echo $this->baseUrl() . '/data/' . $this->myimg; ?>"style="width:60px;height:50px;" /></li>     
+                                    <li><a  href="<?php echo $this->baseUrl(); ?>/Order/myorders">My Orders</a></li>
+                                    <li><a  href="<?php echo $this->baseUrl(); ?>/Order/adduserorder">Add Order</a></li>
+                                    <li><a href="<?php echo $this->baseUrl(); ?>/Auth/logout" >Logout</a></li>
+
+                                </ul>
+                                <?php
+                            }
+                        }
+                        ?>
+                    </nav>
+                    <!-- end of navigation -->
+                    <!-- slider-holder -->
+                    <div class="slider-holder"> <span class="left"></span> <span class="right"></span>
+                        <!-- flexslider -->
+                        <div class="big-slider">
+                            
+                            <ul class="slides">
+                                <li> <img src="<?php echo $this->baseUrl(); ?>/css/images/slide-img.png" alt="" class="alignleft">
+                                    <div class="slide-cnt">
+                                        <h2>Amazing Coffee <br>
+                                            &amp; Delicious Cupcakes</h2>
+                                        <p>Vivamus ultrices tincidunt eros, sed sollicitudin est condimentum quis. Nulla a purus sit amet enim tincidunt varius vel a libero. Aenean neque dolor, tristique eu fermentum quis, imperdiet tincidunt ligula. Ut ut est erat, eget tempor odio vestibulum sed diam orci, vel mattis purus. Donec faucibus neque eu turpis imperdiet commodo. </p>
+                                        <a href="#" class="red-btn">Find Out More!</a> </div>
+                                </li>
+                                <li> <img src="<?php echo $this->baseUrl(); ?>/css/images/slide-img2.png" alt="" class="alignleft">
+                                    <div class="slide-cnt">
+                                        <h2>Amazing Coffee <br>
+                                            &amp; Delicious Cupcakes</h2>
+                                        <p>Vivamus ultrices tincidunt eros, sed sollicitudin est condimentum quis. Nulla a purus sit amet enim tincidunt varius vel a libero. Aenean neque dolor, tristique eu fermentum quis, imperdiet tincidunt ligula. Ut ut est erat, eget tempor odio vestibulum sed diam orci, vel mattis purus. Donec faucibus neque eu turpis imperdiet commodo. </p>
+                                        <a href="#" class="red-btn">Find Out More!</a> </div>
+                                </li>
+                                <li> <img src="<?php echo $this->baseUrl(); ?>/css/images/slide-img3.png" alt="" class="alignleft">
+                                    <div class="slide-cnt">
+                                        <h2>Amazing Coffee <br>
+                                            &amp; Delicious Cupcakes</h2>
+                                        <p>Vivamus ultrices tincidunt eros, sed sollicitudin est condimentum quis. Nulla a purus sit amet enim tincidunt varius vel a libero. Aenean neque dolor, tristique eu fermentum quis, imperdiet tincidunt ligula. Ut ut est erat, eget tempor odio vestibulum sed diam orci, vel mattis purus. Donec faucibus neque eu turpis imperdiet commodo. </p>
+                                        <a href="#" class="red-btn">Find Out More!</a> </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- end of flexslider -->
+                    </div>
+                    <!-- end of slider -->
+                </div>
+                <!-- end of shell -->
+                
+            </div>
+            <!-- end of header -->
+
+
+
+            <div class="main">
+                <div class="shell">
+                   
+                    <!-- cols -->
+                    <section class="cols">
+
+
+<?php echo $this->layout()->content; ?>
+
+                    </section>
+                </div>
+            </div>
+
+
+            <div id="footer-push"></div>
+            <!-- end of wrapper -->
+        </div>
+        <div id="footer">
+            <div class="shell">
+                <div class="footer-nav">
+                    <ul>
+                        <li><a href="#">Homepage</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Our Menu</a></li>
+                        <li><a href="#">Reservations</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Showcase</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+                <p class="copy">© Copyright 2012<span>|</span>Café CSS Template. Design by <a target="_blank" href="http://chocotemplates.com">ChocoTemplates</a></p>
+            </div>
+        </div>
+
+    </body>
+</html>
+

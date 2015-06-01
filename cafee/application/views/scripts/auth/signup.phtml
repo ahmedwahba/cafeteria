@@ -1,0 +1,46 @@
+<html>
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <title> Login</title>
+
+    <link rel="stylesheet" href="<?php echo $this->baseUrl(); ?>/css/style.css">
+
+</head>
+
+<body>
+
+  <div class="container">
+
+  <div id="login-form">
+      <br> <br> <br> 
+<h4>Sign up</h4>
+    <fieldset>
+<?php
+
+if(isset($this->errorMessage)){
+    echo 'wroooooooogn';
+            echo $this->errorMessage;
+            
+
+}
+?>
+
+
+
+<?php
+
+echo $this->form;
+
+
+
+?>
+
+    </fieldset>
+
+  </div> <!-- end login-form -->
+  
+
+</div>

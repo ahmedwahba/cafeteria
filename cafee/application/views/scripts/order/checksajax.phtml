@@ -1,0 +1,29 @@
+
+<div id="checks">
+<table id="mychecks"><tr>
+            <?php for ($i = 0; $i < count($this->checks); $i++) { ?>
+
+                <td> 
+                    <?php // for ($j = 0; $j < count($this->latestorder[0]); $i++) { ?>
+
+                    <br><span class="latestname"><?php echo $this->checks[$i]['date']; ?></span>
+                    <?php // } ?>    
+                </td> 
+
+
+                <td> 
+                    <?php // for ($j = 0; $j < count($this->latestorder[0]); $i++) { ?>
+
+                    <img  src="<?php echo $this->baseUrl() . '/img/product/' . $this->checks[$i]['picture']; ?>" alt="product"/>
+                    <br><span class="latestname"><?php echo $this->checks[$i]['name']; ?></span>
+                    <?php // } ?>    
+                </td> 
+
+
+
+                <?php
+                // var_dump($this->$latestorder[$i][0]['picture']);
+            }
+            ?>
+        </tr>  </table>  
+    </div>

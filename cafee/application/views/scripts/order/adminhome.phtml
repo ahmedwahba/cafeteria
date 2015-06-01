@@ -1,0 +1,48 @@
+<?php  echo $this->headTitle("all order")  ?>
+<?php $this->headScript()->appendFile('/cafee-helper/js/homeorders.js'); ?>
+<br /><br />
+<div id="view-content">
+    <table id="homeorder">
+        <?php for($i=0;$i < count($this->orders);$i++) {?>
+        <tr class="title">
+            <td>Order Date</td><td>Name</td><td>Room</td><td>Ext</td><td>Action</td>
+        </tr>
+        <tr class="orderdata">
+            <td><?php echo $this->orders[$i]["date"];?></td>
+            <td><?php echo $this->orders[$i]["name"];?></td>
+            <td><?php echo $this->orders[$i]["room"];?></td>
+            <td><?php echo $this->orders[$i]["ext"];?></td>
+            <td><button class="changestatus" <?php echo "id='".$this->orders[$i]["orderid"]."'"; ?>>deliver</button> </td>
+        </tr>
+        <tr >
+            <td class="viewdetails" colspan="5">
+                <div class="details">
+                    <?php  $id =$this->orders[$i]["orderid"];
+                                $product = $this->detail[$id];
+                        for ($j =0; $j < count($product);$j++)
+                        {
+                      ?>
+                            <div class="productinfo" >
+                                <img  src="/cafee/public/img/product/<?php echo $product[$j]["picture"]; ?>" alt="product"/> 
+                                <?php echo '<p id =' . $id . '>' ?><?php  echo $product[$j]["name"] . '</p>'; ?> 
+                                <p><?php echo $product[$j]["amount"]; ?></p>
+                                <span class="price"> <?php echo $product[$j]["price"]; ?></span><span >L.E &nbsp;</span>
+                            </div>
+                     <?php
+                        }
+                      ?>
+                </div>
+                <div><span class="ordercomments">Comment:&nbsp;<?php echo $this->orders[$i]["notes"]; ?></span>
+                    <span class="totaloforder">Total : &nbsp; EGP <?php echo $this->orders[$i]["total_price"]; ?></span></div>
+            </td>
+        </tr>
+        <?php } ?>
+     </table>
+    <div id="serverdata"></div>
+</div>
+
+<?php
+    echo '<pre>';
+    //var_dump( $this->orders);
+    echo '</pre>';
+?>

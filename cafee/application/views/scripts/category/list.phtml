@@ -1,0 +1,22 @@
+<table border="2">
+    <tr>
+        <td>Name:</td>
+        <td>Actions:</td> 
+    </tr>
+
+    <?php
+    for ($i = 0; $i < count($this->categories); $i++) {
+        ?>
+        <tr>
+            <td><?php echo $this->categories[$i]['name'] ?></td>
+            
+            <td>
+                <a href="<?php echo $this->baseUrl(); ?>/auth/delete/id/<?php echo $this->categories[$i]['id'] ?>" >delete</a>
+                <a href="<?php echo $this->baseUrl(); ?>/auth/edit/id/<?php echo $this->categories[$i]['id'] ?>" >edit</a>
+            </td>
+        </tr>
+        <?php
+    }
+    ?>
+</table>
+

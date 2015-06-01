@@ -1,0 +1,60 @@
+<?php // echo $this->headTitle("order")        ?>
+<?php // $this->headLink()->appendStylesheet('/css/main.css')       ?>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<?php $this->headScript()->appendFile('/cafee-helper/js/checks.js'); ?>
+
+
+<br /><br /> 
+<div id='latestorder'> 
+
+    <p>start Date: <input type="text" id="startdatepicker"></p>
+    <p>end Date: <input type="text" id="enddatepicker"></p>
+    <input type="button" id="checkorders" value="check orders"/>
+
+    <div id="checks">
+
+        <table border='2'  style="size: auto" style="border-color: cadetblue" id='opt'>
+            <th> Date </th><th> Name</th><th> prduct& amount </th>
+
+           
+                    <?php for ($i = 0; $i < count($this->checks); $i++) { ?>
+                    <tr>
+
+                       
+
+                        <td id='<?php echo $this->checks[$i]['user_id']; ?>'> 
+                            <?php // for ($j = 0; $j < count($this->latestorder[0]); $i++) { ?>
+
+                            <?php echo $this->checks[$i]['user_name']; ?>
+
+                        </td> 
+                        
+                        
+                    </tr>
+
+
+
+
+
+                <?php } ?> 
+
+              
+
+              
+
+
+
+                <!--
+                                                <img  src="<?php echo $this->baseUrl() . '/img/product/' . $this->checks[$i]['picture']; ?>" alt="product"/>-->
+
+
+
+
+
+
+
+        </table> 
+    </div>
+</div>

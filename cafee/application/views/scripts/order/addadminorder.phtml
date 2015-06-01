@@ -1,0 +1,65 @@
+<?php // echo $this->headTitle("order")  ?>
+<?php // $this->headLink()->appendStylesheet('/css/main.css') ?>
+<?php $this->headScript()->appendFile('/cafee-helper/js/order.js'); ?>
+
+<br /><br />
+
+<div id="view-content">
+
+    <div id="detail">
+
+        <div  id="selecteditems" >
+            <table>
+
+            </table>
+
+        </div>
+        <label>Notes:</label><br><br>
+        <textarea id="notess" name="notes" rows="5" cols="30"></textarea><br><br>
+        <label >Room </label>
+        <div id = "myrooms">
+        <select id="selectroom" name='room'>
+             <?php
+             echo($this->rooms);
+                for ($i = 0; $i < count($this->rooms); $i++) {
+                    $name = $this->rooms[$i]['room_no'];
+                    ?>
+                    <option value='<?php echo $name ;?>'><?php echo $name; ?></option>
+                <?php } ?>
+        </select>
+            </div>
+        <div id="totalprice">  00 </div> <h4 align='right' id='egp'>EGP</h4>
+ 
+        <input type="submit" id="addorder" name="addorder" value="confirm" />
+    </div>
+    <div id="pickorder">
+        <div id="users" >
+            <label>Add to user</label><br>
+            <select id="selectuser" name='user'>
+                <?php
+                for ($i = 1; $i < count($this->users); $i++) {
+                    $name = $this->users[$i]['name'];
+                    $id = $this->users[$i]['id'];
+                    ?>
+                    <option value='<?php echo $id ;?>'><?php echo $name; ?></option>
+                <?php } ?>
+            </select>
+        </div>
+
+        <div id="products">
+            <?php
+            //$j = 0;
+            for ($i = 0; $i < count($this->products); $i++) {
+                $id = $this->products[$i]['id'];
+                ?>
+
+                <div class="productinfo" >
+                    <img  <?php echo 'src="' . $this->baseUrl() . '/img/product/' .$this->products[$i]['picture'] .'" '; ?> alt="product"/> 
+                    <?php echo '<p id =' . $id . '>' ?><?php echo $this->products[$i]['name'] . '</p>'; ?> 
+                    <span class="price"> <?php echo $this->products[$i]['price']; ?></span><span >L.E &nbsp;</span>
+                </div>
+
+            <?php } ?>
+        </div>
+    </div>
+</div>

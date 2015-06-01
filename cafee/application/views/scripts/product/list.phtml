@@ -1,0 +1,32 @@
+<br /><br />
+<div id="view-content">
+    
+
+    <ul><li><a href="http://localhost/cafee/public/Product/add">Add Product</a></li></ul>
+    <?php
+    echo "<table border='2'><th>#</th><th>Name</th><th>Picture</th><th>Price</th><th>Action</th>";
+    foreach ($this->products as $key => $value) {
+
+        echo "<tr><td>" . $value['id'] . "</td>";
+        echo "<td>" . $value['name'] . "</td>";
+        echo '<td><img src="' . $this->baseUrl() . '/img/product/' . $value['picture'] . '" style="width:200px;height=200px;"></td>';
+        echo "<td>" . $value['price'] . "</td>";
+        if ($value['state'] == 0) {
+            //echo "<td>not-available";
+            echo "<td><a href='" . "http://localhost/cafee/public/Product/update/id/" . $value['id'] . "'>edit</a>";
+            echo " ";
+            echo "<a href='" . "http://localhost/cafee/public/Product/delete/id/" . $value['id'] . "'>delete</a>";
+            echo "</td></tr>";
+        } else {
+
+            //echo "<td>available ";
+            echo "<td><a href='" . "http://localhost/cafee/public/Product/update/id/" . $value['id'] . "'>edit</a>";
+            echo " ";
+            echo "<a href='" . "http://localhost/cafee/public/Product/delete/id/" . $value['id'] . "'>delete</a>";
+            echo "</td></tr>";
+        }
+    }
+
+    echo "</table>"
+    ?>
+</div>

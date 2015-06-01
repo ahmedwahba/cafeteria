@@ -1,0 +1,28 @@
+<table border="2">
+    <tr>
+        <td>Name:</td>
+        <td>Room:</td>
+        <td>Image:</td>
+        <td>Ext:</td>
+        <td>Action</td>
+    </tr>
+
+    <?php
+    for ($i = 0; $i < count($this->users); $i++) {
+        ?>
+        <tr>
+            <td><?php echo $this->users[$i]['name'] ?></td>
+            <td><?php echo $this->users[$i]['room_no'] ?> </td>
+            <td> <img src = "<?php echo $this->baseUrl() . '/data/' . $this->users[$i]['image']; ?>"  style="width:90px;height:90px;" /></td>
+
+        <td><?php echo $this->users[$i]['ext'] ?></td>
+        <td>
+            <a href="<?php echo $this->baseUrl(); ?>/auth/delete/id/<?php echo $this->users[$i]['id'] ?>" >delete</a>
+            <a href="<?php echo $this->baseUrl(); ?>/auth/edit/id/<?php echo $this->users[$i]['id'] ?>" >edit</a>
+        </td>
+    </tr>
+    <?php
+}
+?>
+</table>
+

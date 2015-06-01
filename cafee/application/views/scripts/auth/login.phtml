@@ -1,0 +1,53 @@
+
+
+
+<head>
+        <link rel="stylesheet" href="<?php echo $this->baseUrl(); ?>/css/style.css" type="text/css">
+</head>
+   
+
+
+
+
+    
+
+  <div class="container">
+
+  <div id="login-form">
+
+    <h3>Login</h3>
+
+    <fieldset>
+<?php
+
+ 
+
+    if(isset($this->errorMessage)){
+
+                echo $this->errorMessage;
+
+    }?>
+
+    <?php
+
+                echo $this->form;
+
+    ?>
+
+    
+   
+    <footer class="clearfix">
+
+          <p><span class="info">?</span><a href="<?php echo $this->baseUrl(); ?>/auth/forgetpassword">Forgot Password</a></p>
+
+    </footer>
+    
+      </form>
+      
+
+    </fieldset>
+
+  </div> <!-- end login-form -->
+  
+
+</div>
