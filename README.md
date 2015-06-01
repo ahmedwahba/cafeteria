@@ -9,9 +9,11 @@ this system was created as a project in zend framework course in track Mobile an
 - orders appears immdiatly after finnishing order on admin screen - using push technology SSE server sent event  - also admin can show order details and press deliver order to change status of order that it is ready to be delivered actually 
 - the system has group of reports about user checks and orders , also each user and his total amount and all orders with details for admin to be reviced abnd checked 
 - admin can put all products that needed for his cafee and change in it at any time , also  can add types of these products 
+
+
 # Team members :
--Ahmed Wahba 
--Ahmed Besibis 
--Eslam Baset 
--Ibrahim Abd-Elgawad
--Marwa Zedan 
+- Ahmed Wahba 
+- Ahmed Besibis 
+- Eslam Baset 
+- Ibrahim Abd-Elgawad
+- Marwa Zedan 
